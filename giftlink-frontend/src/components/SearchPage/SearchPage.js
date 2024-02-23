@@ -17,11 +17,14 @@ function SearchPage() {
                 let url = `${urlConfig.backendUrl}/api/gifts`
                 console.log(url)
                 const response = await fetch(url);
+                console.log(response)
                 if (!response.ok) {
                     //something went wrong
                     throw new Error(`HTTP error; ${response.status}`)
                 }
                 const data = await response.json();
+                console.log(data)
+                console.log("\t \n \n")
                 setSearchResults(data);
             } catch (error) {
                 console.log('Fetch error: ' + error.message);
