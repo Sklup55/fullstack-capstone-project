@@ -26,7 +26,7 @@ router.get('/', async (req, res, next) => {
         }
 
         if (req.query.age_years) {
-            query.age_years = parseInt(req.query.age_years);
+            query.age_years = { $lte: parseInt(req.query.age_years) };
         }
 
         // Task 4: Fetch filtered gifts
